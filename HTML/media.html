@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            width: 90%;
+            background-color: white;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(71, 22, 65, 0.418);
+        }
+
+        .sidebar {
+            background-color: #21a1eb;
+            color: white;
+            padding: 20px;
+        }
+
+
+        .sidebar a:hover {
+            background-color: #a374d8;
+        }
+
+        .sidebar .menu {
+            margin-top: 20px;
+        }
+
+        .sidebar .menu .active {
+            background-color: #d1bfe6;
+        }
+
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+
+        .main-content .search input {
+            width: 40%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            float: right;
+        }
+
+        .media-section {
+            margin-top: 40px;
+        }
+
+        .media-section h2 {
+            background-color: #f4e5ff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            margin-top: 10px;
+        }
+
+        .media-item {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .media-item img {
+            width: 100%;
+        }
+
+        .media-item:hover {
+            background-color: #f4e5ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li> <img src="icon.jpg" alt="icon" height="20px"><b>WORKSPACE</b></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="customers.html">Customers</a></li>
+                <li><a href="departments.html">Departments</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+            <div class="search">
+                <input type="text" placeholder="Search in Media">
+            </div>
+
+            <div class="media-section">
+                <h2>IMAGES</h2>
+                <div class="media-grid">
+                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                </div>
+            </div>
+
+            <div class="media-section">
+                <h2>VIDEO</h2>
+                <div class="media-grid">
+                    <div class="media-item"><img src="video icon.png" alt="Video Icon"></div>
+                    <div class="media-item"><img src="video icon.png" alt="Video Icon"></div>
+                    <div class="media-item"><img src="video icon.png" alt="Video Icon"></div>
+                    <div class="media-item"><img src="video icon.png" alt="Video Icon"></div>
+                </div>
+            </div>
+
+            <div class="media-section">
+                <h2>AUDIO</h2>
+                <div class="media-grid">
+                    <div class="media-item"><img src="audio-icon.jpg" alt="Audio Icon"></div>
+                    <div class="media-item"><img src="audio-icon.jpg" alt="Audio Icon"></div>
+                    <div class="media-item"><img src="audio-icon.jpg" alt="Audio Icon"></div>
+                    <div class="media-item"><img src="audio-icon.jpg" alt="Audio Icon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

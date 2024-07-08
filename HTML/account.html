@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace</title>
+    <link rel="stylesheet" href="stylesa.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><img src="icon.jpg" alt="icon" height="20px"> <b>WORKSPACE</b></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="customers.html">Customers</a></li>
+                <li><a href="departments.html">Departments</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </nav>
+            
+        <div class="main-content">
+                <div class="search-box">
+                    <input type="text" placeholder="Search in My Accounts">
+                </div>
+            <div class="form-container">
+                <div class="form-header">
+                    <img src="gear icon.jpeg" alt="Profile Image" class="profile-image">
+                    <button class="edit-button">✏️</button>
+                </div>
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Eg:John Doe" required>
+                        <button type="button" class="edit-button" data-target="name">✏️</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="example@gmail.com" required>
+                        <button type="button" class="edit-button" data-target="email">✏️</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" id="phone" placeholder="Eg:9134837948" required>
+                        <button type="button" class="edit-button" data-target="phone">✏️</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date Of Birth</label>
+                        <input type="text" id="dob" placeholder="Eg:July 16, 1999" required>
+                        <button type="button" class="edit-button" data-target="dob">✏️</button>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="save-button" id="save-button" >SAVE</button>
+                        <button type="button" class="cancel-button" id="cancel-button" >CANCEL</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

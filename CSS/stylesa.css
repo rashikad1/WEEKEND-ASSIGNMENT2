@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    width: 90%;
+    background-color: white;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(71, 22, 65, 0.418);
+}
+.sidebar {
+    background-color: #21a1eb;
+    color: white;
+    padding: 20px;
+}
+
+
+.sidebar a:hover {
+    background-color: #a374d8;
+}
+
+.sidebar .menu {
+    margin-top: 20px;
+}
+
+.sidebar .menu .active {
+    background-color: #d1bfe6;
+}
+
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px 0;
+}
+
+.account {
+    margin-top: auto;
+    padding: 20px;
+    background-color: #9e79a7;
+    width: 70%;
+    text-align: center;
+}
+
+.account a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.search-box input {
+    width: 30%;   
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    float: right; 
+}
+
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    padding: 30px;
+}
+
+.edit-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: calc(100% - 40px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.save-button,
+.cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.save-button {
+    background-color: #4caf50;
+    color: white;
+}
+
+.cancel-button {
+    background-color: #f44336;
+    color: white;
+}
