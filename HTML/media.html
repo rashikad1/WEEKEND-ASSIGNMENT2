@@ -6,53 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workspace</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            width: 90%;
-            background-color: white;
-            margin: 20px 0;
-            box-shadow: 0 0 10px rgba(71, 22, 65, 0.418);
+        body {
+            display: flex;
         }
 
         .sidebar {
-            background-color: #21a1eb;
-            color: white;
-            padding: 20px;
+            width: 250px;
+            background-color: #e7d2ea;
+            position: fixed;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
         }
 
-
-        .sidebar a:hover {
-            background-color: #a374d8;
-        }
-
-        .sidebar .menu {
-            margin-top: 20px;
-        }
-
-        .sidebar .menu .active {
-            background-color: #d1bfe6;
-        }
-
-
-        .sidebar ul {
+        nav ul {
             list-style-type: none;
-            padding: 0;
+            width: 100%;
+            padding-left: 8px;
         }
 
-        .sidebar li {
-            padding: 10px 0;
+        nav ul li {
+            width: 100%;
         }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: #7e5281;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #c8a3c5;
+            color: rgb(253, 253, 249);
+            border-radius: 10px;
+        }
+
+        nav ul li.active a {
+            background-color: #7e5281;
+            color: white;
+            border-radius: 10px;
+
+        }
+
+        .sidebar button {
+            width: 98%;
+            text-align: left;
+            border-radius: 10px;
+            margin: -1px;
+        }
+
+        .account {
+            margin-top: auto;
+            padding-bottom: 10px;
+            width: 100%;
+        }
+
+        .account a {
+            color: #7e5281;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            width: calc(100% - 250px);
+            margin-top: 50px;
+        }
+
+        .top-bar {
+            margin-left: 250px;
+            background-color: #e7d2ea;
+            padding: 20px;
+            width: calc(100% - 250px);
+            position: fixed;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .top-bar input {
+            padding: 5px 10px;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+
 
         .main-content {
             padding: 20px;
@@ -80,7 +132,7 @@
         .media-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 50px;
+            gap: 20px;
             margin-top: 10px;
         }
 
@@ -88,12 +140,22 @@
             background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 10px;
-            padding: 20px;
+            padding: 5px;
             text-align: center;
         }
 
         .media-item img {
             width: 100%;
+        }
+
+        video {
+            width: 100%;
+            height: 100px;
+        }
+
+        audio {
+            width: 210px;
+            height: 30px;
         }
 
         .media-item:hover {
@@ -103,55 +165,82 @@
 </head>
 
 <body>
-    <div class="container">
-        <nav class="sidebar">
+    <div class="sidebar">
+        <div class="logo">
+            <h2><img src="icon.jpg" alt="icon" height="35px">Workspace</h2>
+        </div>
+        <nav>
             <ul>
-                <li> <img src="icon.jpg" alt="icon" height="20px"><b>WORKSPACE</b></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="customers.html">Customers</a></li>
-                <li><a href="departments.html">Departments</a></li>
-                <li><a href="media.html">Media</a></li>
-                <li><a href="account.html">My Account</a></li>
+                <button>
+                    <li><a href="index.html"><img src="home.png" alt="icon" height="20px">Home</a></li>
+                </button>
+                <button>
+                    <li><a href="customers.html"><img src="cust.png" alt="icon" height="20px">Customers</a></li>
+                </button>
+                <button>
+                    <li><a href="departments.html"><img src="dep.png" alt="icon" height="20px">Departments</a></li>
+                </button>
+                <button>
+                    <li class="active"><a href="media.html"><img src="med.png" alt="icon" height="20px"> Media</a></li>
+                </button>
             </ul>
         </nav>
-
-        <div class="main-content">
-            <div class="search">
-                <input type="text" placeholder="Search in Media">
+        <nav class="account">
+            <ul>
+                <button>
+                    <li> <a href="account.html"><img src="acc.png" alt="icon" height="20px">My Account</a></li>
+                </button>
+            </ul>
+        </nav>
+    </div>
+    <div class="top-bar">
+        <input type="text" placeholder="Search in Media"><button>🔍</button>
+    </div>
+    <div class="main-content">
+        <div class="media-section">
+            <h2>IMAGES</h2>
+            <div class="media-grid">
+                <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
+                <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
             </div>
+        </div>
 
-            <div class="media-section">
-                <h2>IMAGES</h2>
-                <div class="media-grid">
-                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
-                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
-                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
-                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
-                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
-                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
-                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
-                    <div class="media-item"><img src="gear icon.jpeg" alt="Gear Icon"></div>
-                </div>
+        <div class="media-section">
+            <h2>VIDEO</h2>
+            <div class="media-grid">
+                <div class="media-item"><video controls>
+                        <source src="https://youtu.be/TVB920h0u4g?si=f8Xjq2DC_dppxbSN" type="video/mp4">
+                    </video></div>
+                <div class="media-item"><video controls>
+                        <source src="https://youtu.be/TVB920h0u4g?si=f8Xjq2DC_dppxbSN" type="video/mp4">
+                    </video></div>
+                <div class="media-item"><video controls>
+                        <source src="https://youtu.be/TVB920h0u4g?si=f8Xjq2DC_dppxbSN" type="video/mp4">
+                    </video></div>
+                <div class="media-item"><video controls>
+                        <source src="https://youtu.be/TVB920h0u4g?si=f8Xjq2DC_dppxbSN" type="video/mp4">
+                    </video></div>
             </div>
+        </div>
 
-            <div class="media-section">
-                <h2>VIDEO</h2>
-                <div class="media-grid">
-                    <div class="media-item"><img src="video icon.png" alt="Video Icon"></div>
-                    <div class="media-item"><img src="video icon.png" alt="Video Icon"></div>
-                    <div class="media-item"><img src="video icon.png" alt="Video Icon"></div>
-                    <div class="media-item"><img src="video icon.png" alt="Video Icon"></div>
-                </div>
-            </div>
-
-            <div class="media-section">
-                <h2>AUDIO</h2>
-                <div class="media-grid">
-                    <div class="media-item"><img src="audio-icon.jpg" alt="Audio Icon"></div>
-                    <div class="media-item"><img src="audio-icon.jpg" alt="Audio Icon"></div>
-                    <div class="media-item"><img src="audio-icon.jpg" alt="Audio Icon"></div>
-                    <div class="media-item"><img src="audio-icon.jpg" alt="Audio Icon"></div>
-                </div>
+        <div class="media-section">
+            <h2>AUDIO</h2>
+            <div class="media-grid">
+                <div class="media-item"><audio controls>
+                        <source src="horse.ogg" type="audio/ogg">
+                    </audio></div>
+                <div class="media-item"><audio controls>
+                        <source src="horse.ogg" type="audio/ogg">
+                    </audio></div>
+                <div class="media-item"><audio controls>
+                        <source src="horse.ogg" type="audio/ogg">
+                    </audio></div>
             </div>
         </div>
     </div>

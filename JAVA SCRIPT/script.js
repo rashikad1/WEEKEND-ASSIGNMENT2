@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (inputField.disabled) {
                 originalValues[targetId] = inputField.value;
-                inputField.required = false;
-                saveButton.required = false;
-                cancelButton.required = false;
+                inputField.disabled = false;
+                saveButton.disabled = false;
+                cancelButton.disabled = false;
             }
         });
     });
@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
     saveButton.addEventListener('click', () => {
         const inputs = profileForm.querySelectorAll('input');
         inputs.forEach(input => {
-            input.required = true;
+            input.disabled = true;
         });
-        saveButton.required = true;
-        cancelButton.required = true;
+        saveButton.disabled = true;
+        cancelButton.disabled = true;
         alert('Profile updated successfully!');
     });
 
@@ -34,9 +34,34 @@ document.addEventListener('DOMContentLoaded', () => {
         const inputs = profileForm.querySelectorAll('input');
         inputs.forEach(input => {
             input.value = originalValues[input.id];
-            input.required = true;
+            input.disabled = true;
         });
-        saveButton.required = true;
-        cancelButton.required = true;
+        saveButton.disabled = true;
+        cancelButton.disabled = true;
     });
 });
+function previewImage(event) {
+    const file = event.target.files[0];
+    const fileType = file.type;
+    const fileSize = file.size;
+
+    const validImageTypes = ["image/jpeg", "image/png", "image/gif"];
+    const maxSize = 2 * 1024 * 1024; // 2MB
+
+    if (!validImageTypes.includes(fileType)) {
+        alert("Please upload a valid image file (JPEG, PNG, GIF).");
+        return;
+    }
+
+    if (fileSize > maxSize) {
+        alert("File size exceeds the maximum limit of 2MB.");
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function() {
+        const output = document.getElementById('profileImage');
+        output.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+}

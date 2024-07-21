@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment2</title>
-    <link rel="stylesheet" href="styles2.css">
+    <title>Workspace Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div class="container">
-        <nav class="sidebar">
+    <div class="sidebar">
+        <div class="logo">
+            <h2><img src="icon.jpg" alt="icon" height="35px">Workspace</h2>
+        </div>
+        <nav>
             <ul>
-                <li><img src="icon.jpg" alt="icon" height="20px"> <b>WORKSPACE</b></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="customers.html">Customers</a></li>
-                <li><a href="departments.html">Departments</a></li>
-                <li><a href="media.html">Media</a></li>
-                <li><a href="account.html">My Account</a></li>
+                <button><li class="active"><a href="index.html"><img src="home.png" alt="icon" height="20px">Home</a></li></button>
+                <button><li><a href="customers.html"><img src="cust.png" alt="icon" height="20px">Customers</a></li></button>
+                <button><li><a href="departments.html"><img src="dep.png" alt="icon" height="20px">Departments</a></li></button>
+               <button><li><a href="media.html"><img src="med.png" alt="icon" height="20px"> Media</a></li></button>
             </ul>
         </nav>
-        <div class="content">
-            <div class="head">
-                <input type="text" placeholder="Search in Home">
-            </div>
-            <div class="summary">
-                <div class="summary-item">
-                    <p>New Customers</p>
+        <nav class="account">
+            <ul>
+             <button><li> <a href="account.html"><img src="acc.png" alt="icon" height="20px">My Account</a></li></button>
+            </ul>
+        </nav>
+    </div>
+    <div class="top-bar">
+        <input type="text" placeholder="Search in Home"><button>🔍</button>
+    </div>
+    <div class="main-content">
+       
+        <div class="dashboard">
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>New Customers</h3>
                     <p>24</p>
                 </div>
-                <div class="summary-item">
-                    <p>Department Activity</p>
+                <div class="stat-box">
+                    <h3>Department Activity</h3>
                     <p>434+</p>
                 </div>
-                <div class="summary-item">
-                    <p>Total Media Size</p>
-                    <p>10TB+</p>
+                <div class="stat-box">
+                    <h3>Total Media Size</h3>
+                    <p>10 TB</p>
                 </div>
             </div>
             <div class="table-container">
@@ -175,5 +182,4 @@
         </div>
     </div>
 </body>
-
 </html>

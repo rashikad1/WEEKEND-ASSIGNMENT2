@@ -1,61 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workspace</title>
     <link rel="stylesheet" href="stylesa.css">
 </head>
+
 <body>
-    <div class="container">
-        <nav class="sidebar">
+    <div class="sidebar">
+        <div class="logo">
+            <h2><img src="icon.jpg" alt="icon" height="35px">Workspace</h2>
+        </div>
+        <nav>
             <ul>
-                <li><img src="icon.jpg" alt="icon" height="20px"> <b>WORKSPACE</b></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="customers.html">Customers</a></li>
-                <li><a href="departments.html">Departments</a></li>
-                <li><a href="media.html">Media</a></li>
-                <li><a href="account.html">My Account</a></li>
+                <button>
+                    <li><a href="index.html"><img src="home.png" alt="icon" height="20px">Home</a></li>
+                </button>
+                <button>
+                    <li><a href="customers.html"><img src="cust.png" alt="icon" height="20px">Customers</a></li>
+                </button>
+                <button>
+                    <li><a href="departments.html"><img src="dep.png" alt="icon" height="20px">Departments</a></li>
+                </button>
+                <button>
+                    <li><a href="media.html"><img src="med.png" alt="icon" height="20px"> Media</a></li>
+                </button>
             </ul>
         </nav>
-            
-        <div class="main-content">
-                <div class="search-box">
-                    <input type="text" placeholder="Search in My Accounts">
+        <nav class="accountcl">
+            <ul>
+                <button>
+                    <li class="active"> <a href="account.html"><img src="acc.png" alt="icon" height="20px">My
+                            Account</a></li>
+                </button>
+            </ul>
+        </nav>
+    </div>
+    <div class="top-bar">
+        <input type="text" placeholder="Search in Accounts"><button>🔍</button>
+    </div>
+    <div class="main-content">
+        <div class="form-container">
+            <form id="profile-form">
+                <div class="image-upload">
+                    <img id="profileImage" src="acc.png" alt="Settings" width="100" height="100">
+                    <input type="file" id="imageUpload" accept="image/*" style="display:none"
+                        onchange="previewImage(event)">
+                    <button alt="Edit" class="edit-button"
+                        onclick="document.getElementById('imageUpload').click()">✏️</button>
                 </div>
-            <div class="form-container">
-                <div class="form-header">
-                    <img src="gear icon.jpeg" alt="Profile Image" class="profile-image">
-                    <button class="edit-button">✏️</button>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" value="John Doe" disabled>
+                    <button type="button" class="edit-button" data-target="name">✏️</button>
                 </div>
-                <form id="profile-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Eg:John Doe" required>
-                        <button type="button" class="edit-button" data-target="name">✏️</button>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="example@gmail.com" required>
-                        <button type="button" class="edit-button" data-target="email">✏️</button>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="text" id="phone" placeholder="Eg:9134837948" required>
-                        <button type="button" class="edit-button" data-target="phone">✏️</button>
-                    </div>
-                    <div class="form-group">
-                        <label for="dob">Date Of Birth</label>
-                        <input type="text" id="dob" placeholder="Eg:July 16, 1999" required>
-                        <button type="button" class="edit-button" data-target="dob">✏️</button>
-                    </div>
-                    <div class="form-actions">
-                        <button type="button" class="save-button" id="save-button" >SAVE</button>
-                        <button type="button" class="cancel-button" id="cancel-button" >CANCEL</button>
-                    </div>
-                </form>
-                
-            </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" value="example@gmail.com" disabled>
+                    <button type="button" class="edit-button" data-target="email">✏️</button>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" value="9134837948" disabled>
+                    <button type="button" class="edit-button" data-target="phone">✏️</button>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date Of Birth</label>
+                    <input type="text" id="dob" value="July 16, 1999" disabled>
+                    <button type="button" class="edit-button" data-target="dob">✏️</button>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="save-button" id="save-button">SAVE</button>
+                    <button type="button" class="cancel-button" id="cancel-button">CANCEL</button>
+                </div>
+            </form>
         </div>
     </div>
     <script src="script.js"></script>
